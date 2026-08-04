@@ -1,0 +1,168 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #D7DCF6;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.resume{
+    width:900px;
+    background:#fff;
+    display:grid;
+    grid-template-columns:35% 65%;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+/* Left */
+
+.left{
+    padding:40px 30px;
+}
+
+.left h1{
+    font-size:48px;
+    letter-spacing:4px;
+    color:#222;
+    text-transform:uppercase;
+    line-height:1.1;
+    margin-bottom:8px;
+}
+
+.left h3{
+    color:#777;
+    font-size:17px;
+    letter-spacing:2px;
+    margin-bottom:35px;
+    text-transform:uppercase;
+}
+
+.section{
+    margin-bottom:35px;
+}
+
+.section h2{
+    font-size:20px;
+    color:#222;
+    letter-spacing:2px;
+    margin-bottom:15px;
+    text-transform:uppercase;
+}
+
+.section p{
+    color:#666;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:8px;
+}
+
+.section h4{
+    font-size:17px;
+    color:#333;
+    margin-bottom:5px;
+}
+
+.section span{
+    color:#888;
+    font-size:14px;
+}
+
+.left ul{
+    padding-left:18px;
+}
+
+.left li{
+    margin-bottom:10px;
+    color:#555;
+}
+
+/* Right */
+
+.right{
+    border-left:2px solid #cfcfcf;
+    padding:40px;
+}
+
+.box{
+    position:relative;
+    padding-left:30px;
+    margin-bottom:35px;
+}
+
+.box::before{
+    content:"";
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#222;
+    position:absolute;
+    left:-8px;
+    top:8px;
+}
+
+.box::after{
+    content:"";
+    position:absolute;
+    left:-3px;
+    top:20px;
+    width:2px;
+    height:100%;
+    background:#bbb;
+}
+
+.box:last-child::after{
+    display:none;
+}
+
+.box h3{
+    font-size:24px;
+    color:#222;
+    margin-bottom:5px;
+}
+
+.box span{
+    display:block;
+    color:#777;
+    margin-bottom:8px;
+}
+
+.box h4{
+    color:#444;
+    margin-bottom:10px;
+    font-size:17px;
+}
+
+.box p{
+    color:#666;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .resume{
+        grid-template-columns:1fr;
+    }
+
+    .right{
+        border-left:none;
+        border-top:2px solid #ddd;
+    }
+
+    .left h1{
+        font-size:36px;
+    }
+
+    .box{
+        padding-left:20px;
+    }
+
+}

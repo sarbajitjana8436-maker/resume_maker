@@ -20,5 +20,20 @@ from.import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.home, name= "home")
+
+    # login pipeline connection
+    # path("", views.login, name= "login"),
+
+    #  dashbord
+    path("", views.fastpage, name= "fastpage"),
+    path("dashboard/", views.dashboard, name= "dashboard"),
+    path("edit/", views.edit, name= "edit"),
+    path("logout/", views.logout, name= "logout"),
+    path("confirm_logout/", views.confirm_logout, name="confirm_logout"),
+    path("choose_tem/", views.choose_tem, name="choose_tem"),
+    path("create_resume/", views.create_resume, name= "create_resume")
+
+
+    
+
 ]
