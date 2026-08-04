@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#E8DFDF;
+    padding:40px;
+    display:flex;
+    justify-content:center;
+}
+
+.resume{
+    width:850px;
+    background:#fff;
+    padding:50px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+/* Header */
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:38px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#222;
+}
+
+.header h3{
+    margin:10px 0;
+    color:#777;
+    font-size:16px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.header p{
+    margin-top:15px;
+    background:#f3f3f3;
+    padding:10px;
+    color:#555;
+    font-size:14px;
+}
+
+/* Section */
+
+.section{
+    margin-top:30px;
+}
+
+.section h2{
+    text-align:center;
+    font-size:18px;
+    color:#444;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    border-top:2px solid #cfcfcf;
+    border-bottom:2px solid #cfcfcf;
+    padding:8px;
+    margin-bottom:18px;
+}
+
+.section p{
+    color:#555;
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* Experience */
+
+.item{
+    margin-bottom:25px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.row h3{
+    color:#222;
+    font-size:18px;
+}
+
+.row span{
+    color:#777;
+    font-size:14px;
+}
+
+.item h4{
+    color:#666;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+/* Skills */
+
+ul{
+    margin-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+    color:#444;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .resume{
+        width:100%;
+        padding:25px;
+    }
+
+    .header h1{
+        font-size:28px;
+    }
+
+    .row{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}

@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Resume Template</title>
+
+    <link rel="stylesheet" href="{% static 'css/choose_tem.css' %}">
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <h1>Choose Your Resume Template</h1>
+
+    <p>Select a professional template for your resume</p>
+
+
+
+    <div class="template-box">
+
+
+
+        <div class="card">
+
+            <img src="{% static 'images/template1.jpg' %}" alt="Template 1">
+
+            <h3>Modern Resume</h3>
+            <a href="{% url 'edit' %}?template=1">
+                <button>Select Template</button>
+
+            </a>
+
+            
+
+        </div>
+
+
+
+
+        <div class="card">
+
+            <img src="{% static 'images/template2.jpg' %}" alt="Template 2">
+
+            <h3>Professional Resume</h3>
+
+            <a href="{% url 'edit' %}?template=2">
+                <button>Select Template</button>
+
+            </a>
+
+        </div>
+
+
+
+
+        <div class="card">
+
+            <img src="{% static 'images/template3.jpg' %}" alt="Template 3">
+
+            <h3>Creative Resume</h3>
+
+            <a href="{% url 'edit' %}?template=3">
+                <button>Select Template</button>
+
+            </a>
+
+        </div>
+
+
+
+
+        <div class="card">
+
+            <img src="{% static 'images/template4.jpg' %}" alt="Template 4">
+
+            <h3>Simple Resume</h3>
+
+            <a href="{% url 'edit' %}?template=4">
+                <button>Select Template</button>
+
+            </a>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+
+</html>

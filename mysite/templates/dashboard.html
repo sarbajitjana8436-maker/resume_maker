@@ -1,0 +1,261 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeMaker</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-file-lines"></i>
+            <h2>ResumeMaker</h2>
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </li>
+
+            <li>
+                <i class="fa-solid fa-plus"></i>
+                <a href="{% url 'choose_tem' %}" > Create Resume</a>
+            </li>
+            
+
+            <li>
+                <i class="fa-solid fa-folder"></i>
+                My Resumes
+            </li>
+            <li>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <a href="{% url 'logout'%}">Logout</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Navbar -->
+
+        <nav class="navbar">
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                type="text"
+                placeholder="Search">
+
+            </div>
+
+            <div class="profile">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <div class="avatar">
+                    {{name.0}}
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- Banner -->
+
+        <section class="banner">
+
+            <div class="banner-text">
+
+                <h1>
+                    Welcome Back,
+                    {{name}} 👋
+                </h1>
+
+                <p>
+                    Create professional resumes
+                    in just a few minutes.
+                </p>
+
+                <button>
+                    <i class="fa-solid fa-plus"></i>
+                    <a href="{% url 'choose_tem' %}" style="text-decoration: none;">
+    Create Resume
+</a>
+                </button>
+
+            </div>
+
+            <div class="banner-image">
+
+                <img
+                src="{% static 'images/resume.jpg' %}"
+                alt="resume">
+
+            </div>
+
+        </section>
+
+        <!-- Recent -->
+
+        <section class="recent">
+
+            <div class="title">
+
+                <h2>Recent Resumes</h2>
+
+            </div>
+
+            <table>
+
+                <tr>
+
+                    <th>Name</th>
+
+                    <th>Category</th>
+
+                    <th>Date</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>Software Engineer</td>
+
+                    <td>Professional</td>
+
+                    <td>28 July 2026</td>
+
+                    <td>
+
+                        <button>Edit</button>
+
+                        <button>View</button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Web Developer</td>
+
+                    <td>Modern</td>
+
+                    <td>27 July 2026</td>
+
+                    <td>
+
+                        <button>Edit</button>
+
+                        <button>View</button>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>UI Designer</td>
+
+                    <td>Creative</td>
+
+                    <td>25 July 2026</td>
+
+                    <td>
+
+                        <button>Edit</button>
+
+                        <button>View</button>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Templates -->
+
+        <section class="templates">
+
+            <div class="template">
+
+                <img
+                src="{% static 'images/template1.jpg' %}"
+                alt="">
+
+                <button>
+                    <a href="{% url 'choose_tem' %}" style="text-decoration: none; color: aliceblue;">Use Template</a>
+                </button>
+
+            </div>
+
+            <div class="template">
+
+                <img
+                src="{% static 'images/template2.jpg' %}"
+                alt="">
+
+                <button>
+                    <a href="{% url 'choose_tem' %}" style="text-decoration: none; color: aliceblue;">Use Template</a>
+                </button>
+
+            </div>
+
+            <div class="template">
+
+                <img
+                src="{% static 'images/template3.jpg' %}"
+                alt="">
+
+                <button>
+                    <a href="{% url 'choose_tem' %}" style="text-decoration: none; color: aliceblue;">Use Template</a>
+                </button>
+
+            </div>
+
+            <div class="template">
+
+                <img
+                src="{% static 'images/template4.jpg' %}"
+                alt="">
+
+                <button>
+                    <a href="{% url 'choose_tem' %}" style="text-decoration: none; color: aliceblue;">Use Template</a>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

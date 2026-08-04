@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0c1335;
+    color:#fff;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#111a45;
+    padding:30px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:40px;
+}
+
+.logo i{
+    font-size:28px;
+    color:#4d7dff;
+}
+
+.logo h2{
+    font-size:24px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    padding:16px;
+    margin-bottom:12px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar ul li i{
+    margin-right:12px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+    background:#4d7dff;
+}
+
+/* Main */
+
+.main{
+    flex:1;
+    padding:35px;
+}
+
+/* Topbar */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.topbar h1{
+    font-size:34px;
+}
+
+.topbar button{
+    background:#4d7dff;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.topbar button:hover{
+    background:#668eff;
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+/* Cards */
+
+.card{
+    background:#17224f;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+.card h2{
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+/* Inputs */
+
+input,
+textarea{
+    width:100%;
+    margin-bottom:15px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#26356f;
+    color:white;
+    font-size:15px;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#c9d2ff;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border:2px solid #4d7dff;
+}
+
+/* Button */
+
+.card button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#4d7dff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    background:#668eff;
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}

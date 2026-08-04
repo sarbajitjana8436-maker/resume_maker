@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume 1</title>
+
+    <link rel="stylesheet" href="{% static 'css/resume1.css' %}">
+</head>
+<body>
+
+<div class="resume">
+
+    <!-- Header -->
+    <div class="header">
+
+        <div class="left">
+
+            <h1>{{ name|default:"YOUR NAME" }}</h1>
+
+            <h3>{{ job_title|default:"JOB TITLE" }}</h3>
+
+        </div>
+
+        <div class="right">
+
+            <p>{{ email }}</p>
+
+            <p>{{ address }}</p>
+
+            <p>{{ phone }}</p>
+
+        </div>
+
+    </div>
+
+    <!-- Summary -->
+
+    <div class="section">
+
+        <h2>PROFESSIONAL SUMMARY</h2>
+
+        <p>
+            {{ professional_summary }}
+        </p>
+
+    </div>
+
+    <!-- Experience -->
+
+    <div class="section">
+
+        <h2>EXPERIENCE</h2>
+
+        <div class="item">
+
+            <div class="row">
+
+                <h3>{{ company }}</h3>
+
+                <span>{{ duration }}</span>
+
+            </div>
+
+            <h4>{{ job_title }}</h4>
+
+            <p>
+                {{ experience_describtion }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Education -->
+
+    <div class="section">
+
+        <h2>EDUCATION</h2>
+
+        <div class="row">
+
+            <div>
+
+                <h3>{{ college }}</h3>
+
+                <p>{{ degree }}</p>
+
+            </div>
+
+            <span>{{ passing_year }}</span>
+
+        </div>
+
+    </div>
+
+    <!-- Projects -->
+
+    <div class="section">
+
+        <h2>PROJECTS</h2>
+
+        <div class="item">
+
+            <h3>{{ project_name }}</h3>
+
+            <p>
+
+                {{ project_description }}
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Skills -->
+
+    <div class="section">
+
+        <h2>SKILLS</h2>
+
+        <div class="skills">
+
+            <ul>
+
+                <li>{{ skill1 }}</li>
+
+                <li>{{ skill2 }}</li>
+
+            </ul>
+
+            <ul>
+
+                <li>{{ skill3 }}</li>
+
+                <li>{{ skill4 }}</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

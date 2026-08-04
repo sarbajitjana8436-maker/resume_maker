@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeMaker</title>
+
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-file-lines"></i>
+            <h2>Resume Maker</h2>
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-user"></i>
+                Personal Info
+            </li>
+
+            <li>
+                <i class="fa-solid fa-briefcase"></i>
+                Experience
+            </li>
+
+            <li>
+                <i class="fa-solid fa-graduation-cap"></i>
+                Education
+            </li>
+
+            <li>
+                <i class="fa-solid fa-lightbulb"></i>
+                Skills
+            </li>
+
+            <li>
+                <i class="fa-solid fa-diagram-project"></i>
+                Projects
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <h1>Create Resume</h1>
+
+        </div>
+
+        <form method="post" action="{% url 'create_resume' %}">
+
+            {% csrf_token %}
+            <input type="hidden" name="template" value="{{ template }}">
+
+            <div class="grid">
+
+                <!-- Personal -->
+
+                <div class="card">
+
+                    <h2>Personal Information</h2>
+
+                    <input type="text" name="name" placeholder="Full Name">
+
+                    <input type="email" name="email" placeholder="Email">
+
+                    <input type="text" name="phone" placeholder="Phone">
+
+                    <input type="text" name="address" placeholder="Address">
+
+                    <textarea
+                    rows="5"
+                    placeholder="Professional Summary" name="professional_summary"></textarea>
+
+                </div>
+
+                <!-- Experience -->
+
+                <div class="card">
+
+                    <h2>Work Experience</h2>
+
+                    <input type="text" name="company" placeholder="Company">
+
+                    <input type="text" name="job_title" placeholder="Job Title">
+
+                    <input type="text" name="duration" placeholder="Duration">
+
+                    <textarea
+                    rows="5"
+                    placeholder="Describe your experience" name="experience_describtion"></textarea>
+
+                </div>
+
+                <!-- Education -->
+
+                <div class="card">
+
+                    <h2>Education</h2>
+
+                    <input type="text" name="college" placeholder="College">
+
+                    <input type="text" name="degree" placeholder="Degree">
+
+                    <input type="text" name="passing_year" placeholder="Passing Year">
+
+                </div>
+
+                <!-- Skills -->
+
+                <div class="card">
+
+                    <h2>Skills</h2>
+
+                    <input type="text" name="skill1" placeholder="Skill 1">
+
+                    <input type="text" name="skill2" placeholder="Skill 2">
+
+                    <input type="text" name="skill3" placeholder="Skill 3">
+
+                    <input type="text" name="skill4" placeholder="Skill 4">
+
+                </div>
+
+                <!-- Projects -->
+
+                <div class="card">
+
+                    <h2>Projects</h2>
+
+                    <input type="text" name="project_name" placeholder="Project Name">
+
+                    <textarea
+                    rows="5"
+                    placeholder="Project Description" name="project_description"></textarea>
+
+                </div>
+
+                <!-- Share -->
+
+                <div class="card">
+
+                    <h2>Download Resume</h2>
+
+                    <button type="submit">
+                        Generate Resume
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+</body>
+</html>

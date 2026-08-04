@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#c4a4f0;
+    padding:40px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.resume{
+    width:800px;
+    background:#ebadad;
+    padding:40px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:2px solid #d9d9d9;
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+
+.left h1{
+    color:#0b4ea2;
+    font-size:42px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.left h3{
+    font-size:18px;
+    color:#666;
+    font-weight:500;
+}
+
+.right{
+    text-align:right;
+}
+
+.right p{
+    font-size:14px;
+    color:#555;
+    margin:8px 0;
+}
+
+/* Sections */
+
+.section{
+    margin-top:28px;
+}
+
+.section h2{
+    color:#0b4ea2;
+    font-size:18px;
+    text-transform:uppercase;
+    border-bottom:2px solid #d7d7d7;
+    padding-bottom:6px;
+    margin-bottom:15px;
+}
+
+.section p{
+    font-size:14px;
+    line-height:1.8;
+    color:#444;
+}
+
+/* Experience */
+
+.item{
+    margin-bottom:20px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.row h3{
+    font-size:18px;
+    color:#222;
+}
+
+.row span{
+    font-size:14px;
+    color:#666;
+    font-style:italic;
+}
+
+.item h4{
+    color:#555;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+/* Education */
+
+.section .row p{
+    margin-top:5px;
+}
+
+/* Skills */
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.skills ul{
+    padding-left:20px;
+}
+
+.skills li{
+    margin-bottom:10px;
+    color:#444;
+    font-size:14px;
+}
+
+/* Responsive */
+
+@media(max-width:850px){
+
+    body{
+        padding:15px;
+    }
+
+    .resume{
+        width:100%;
+        padding:25px;
+    }
+
+    .header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .right{
+        text-align:left;
+    }
+
+    .skills{
+        grid-template-columns:1fr;
+    }
+
+    .left h1{
+        font-size:34px;
+    }
+
+}

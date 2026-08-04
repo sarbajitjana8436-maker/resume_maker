@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume 3</title>
+    <link rel="stylesheet" href="{% static 'css/resume3.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+
+<div class="resume">
+
+    <div class="left">
+
+        <img src="{% static 'images/profile.jpg' %}" class="profile">
+
+        <h1>{{ name }}</h1>
+
+        <h3>{{ job_title }}</h3>
+
+        <h2>ABOUT ME</h2>
+        <p>{{ summary }}</p>
+
+        <h2>CONTACT</h2>
+
+        <p><i class="fa-solid fa-phone"></i> {{ phone }}</p>
+        <p><i class="fa-solid fa-envelope"></i> {{ email }}</p>
+        <p><i class="fa-solid fa-location-dot"></i> {{ address }}</p>
+
+    </div>
+
+    <div class="right">
+
+        <h2>WORK EXPERIENCE</h2>
+
+        <div class="box">
+            <h3>{{ company }}</h3>
+            <span>{{ duration }}</span>
+            <p>{{ experience }}</p>
+        </div>
+
+        <h2>EDUCATION</h2>
+
+        <div class="box">
+            <h3>{{ college }}</h3>
+            <span>{{ passing_year }}</span>
+            <p>{{ degree }}</p>
+        </div>
+
+        <h2>PROJECTS</h2>
+
+        <div class="box">
+            <h3>{{ project_name }}</h3>
+            <p>{{ project_description }}</p>
+        </div>
+
+        <h2>SKILLS</h2>
+
+        <ul class="skills">
+            <li>{{ skill1 }}</li>
+            <li>{{ skill2 }}</li>
+            <li>{{ skill3 }}</li>
+            <li>{{ skill4 }}</li>
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>
