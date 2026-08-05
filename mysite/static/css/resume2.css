@@ -1,168 +1,223 @@
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= RESET ================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
+/* ================= BODY ================= */
+
 body{
-    background: #D7DCF6;
-    display:flex;
-    justify-content:center;
+    background:#d8dee9;
     padding:40px;
 }
 
+/* ================= RESUME (A4) ================= */
+
 .resume{
-    width:900px;
-    background:#fff;
-    display:grid;
-    grid-template-columns:35% 65%;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    width:210mm;
+    min-height:297mm;
+    margin:auto;
+    display:flex;
+    background:#ffffff;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
 }
 
-/* Left */
+/* ================= LEFT SIDEBAR ================= */
 
 .left{
+    width:34%;
+    background:linear-gradient(180deg,#0f172a,#1e3a8a);
+    color:#ffffff;
     padding:40px 30px;
 }
 
 .left h1{
-    font-size:48px;
-    letter-spacing:4px;
-    color:#222;
-    text-transform:uppercase;
-    line-height:1.1;
+    font-size:32px;
+    line-height:1.2;
     margin-bottom:8px;
+    font-weight:700;
 }
 
-.left h3{
-    color:#777;
+.left > h3{
     font-size:17px;
-    letter-spacing:2px;
+    font-weight:400;
+    color:#cbd5e1;
     margin-bottom:35px;
+    letter-spacing:1px;
+}
+
+.left .section{
+    margin-bottom:32px;
+}
+
+.left .section h2{
+    font-size:15px;
     text-transform:uppercase;
-}
-
-.section{
-    margin-bottom:35px;
-}
-
-.section h2{
-    font-size:20px;
-    color:#222;
     letter-spacing:2px;
     margin-bottom:15px;
-    text-transform:uppercase;
+    padding-bottom:8px;
+    border-bottom:2px solid rgba(255,255,255,.25);
 }
 
-.section p{
-    color:#666;
+.left .section p,
+.left .section span{
+    color:#dbeafe;
     font-size:14px;
     line-height:1.8;
-    margin-bottom:8px;
 }
 
-.section h4{
-    font-size:17px;
-    color:#333;
+.left h4{
+    font-size:16px;
     margin-bottom:5px;
 }
 
-.section span{
-    color:#888;
-    font-size:14px;
-}
-
 .left ul{
-    padding-left:18px;
+    list-style:none;
 }
 
 .left li{
-    margin-bottom:10px;
-    color:#555;
+    background:rgba(255,255,255,.10);
+    border-left:4px solid #60a5fa;
+    margin-bottom:12px;
+    padding:10px 15px;
+    border-radius:8px;
+    transition:.3s;
 }
 
-/* Right */
+.left li:hover{
+    background:rgba(255,255,255,.18);
+    transform:translateX(5px);
+}
+
+/* ================= RIGHT SIDE ================= */
 
 .right{
-    border-left:2px solid #cfcfcf;
+    width:66%;
     padding:40px;
+    background:#ffffff;
 }
 
-.box{
-    position:relative;
-    padding-left:30px;
+.right .section{
     margin-bottom:35px;
 }
 
-.box::before{
-    content:"";
-    width:12px;
-    height:12px;
-    border-radius:50%;
-    background:#222;
-    position:absolute;
-    left:-8px;
-    top:8px;
+.right .section h2{
+    color:#1e3a8a;
+    font-size:21px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:20px;
+    padding-left:16px;
+    position:relative;
 }
 
-.box::after{
+.right .section h2::before{
     content:"";
     position:absolute;
-    left:-3px;
-    top:20px;
-    width:2px;
-    height:100%;
-    background:#bbb;
+    left:0;
+    top:1px;
+    width:5px;
+    height:28px;
+    border-radius:20px;
+    background:#2563eb;
 }
 
-.box:last-child::after{
-    display:none;
+.box{
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    padding:22px;
+    border-radius:10px;
+    margin-bottom:20px;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
 }
 
 .box h3{
-    font-size:24px;
-    color:#222;
+    font-size:22px;
+    color:#111827;
     margin-bottom:5px;
 }
 
 .box span{
-    display:block;
-    color:#777;
-    margin-bottom:8px;
+    display:inline-block;
+    background:#2563eb;
+    color:#fff;
+    padding:5px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin:8px 0 12px;
 }
 
 .box h4{
-    color:#444;
-    margin-bottom:10px;
+    color:#2563eb;
     font-size:17px;
+    margin-bottom:10px;
 }
 
 .box p{
-    color:#666;
+    color:#555;
     line-height:1.8;
-    font-size:14px;
+    font-size:15px;
 }
 
-/* Responsive */
+/* ================= PRINT ================= */
 
-@media(max-width:768px){
+@page{
+    size:A4 portrait;
+    margin:0;
+}
+
+@media print{
+
+    body{
+        background:#fff;
+        padding:0;
+        margin:0;
+    }
 
     .resume{
-        grid-template-columns:1fr;
+        width:210mm;
+        min-height:297mm;
+        margin:0;
+        box-shadow:none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    body{
+        padding:15px;
+    }
+
+    .resume{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        padding:30px 25px;
     }
 
     .right{
-        border-left:none;
-        border-top:2px solid #ddd;
+        padding:30px 25px;
     }
-
-    .left h1{
-        font-size:36px;
-    }
-
-    .box{
-        padding-left:20px;
-    }
-
 }
