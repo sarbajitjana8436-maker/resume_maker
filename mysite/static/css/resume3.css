@@ -1,3 +1,8 @@
+@page{
+    size:A4 portrait;
+    margin:0;
+}
+
 *{
     margin:0;
     padding:0;
@@ -9,18 +14,24 @@ body{
     background:#C5C8D2;
     display:flex;
     justify-content:center;
-    padding:30px;
+    align-items:flex-start;
+    padding:40px;
+    min-height:100vh;
 }
 
+/* ===================== A4 RESUME ===================== */
+
 .resume{
-    width:900px;
+    width:210mm;
+    min-height:360mm;
     background:#fff;
     display:grid;
     grid-template-columns:32% 68%;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    overflow:hidden;
+    box-shadow:0 12px 35px rgba(0,0,0,.20);
 }
 
-/* Left */
+/* ===================== LEFT ===================== */
 
 .left{
     background:#6c4db5;
@@ -30,8 +41,8 @@ body{
 }
 
 .profile{
-    width:170px;
-    height:170px;
+    width:160px;
+    height:160px;
     border-radius:50%;
     object-fit:cover;
     border:6px solid rgba(255,255,255,.3);
@@ -54,22 +65,22 @@ body{
     text-align:left;
     margin:25px 0 10px;
     border-bottom:2px solid rgba(255,255,255,.4);
-    padding-bottom:5px;
+    padding-bottom:6px;
     font-size:18px;
 }
 
 .left p{
     text-align:left;
     margin:10px 0;
-    line-height:1.6;
+    line-height:1.7;
     font-size:14px;
 }
 
 .left i{
-    width:22px;
+    width:20px;
 }
 
-/* Right */
+/* ===================== RIGHT ===================== */
 
 .right{
     padding:40px;
@@ -84,7 +95,7 @@ body{
 }
 
 .box{
-    margin-bottom:30px;
+    margin-bottom:28px;
     padding-left:20px;
     border-left:4px solid #6c4db5;
 }
@@ -92,6 +103,7 @@ body{
 .box h3{
     color:#222;
     margin-bottom:5px;
+    font-size:19px;
 }
 
 .box span{
@@ -114,23 +126,50 @@ body{
     color:#444;
 }
 
-@media(max-width:768px){
+/* ===================== PRINT ===================== */
 
-    .resume{
-        grid-template-columns:1fr;
+@media print{
+
+    body{
+        padding:0;
+        margin:0;
+        background:#fff;
     }
 
-    .right{
-        padding:25px;
+    .resume{
+        width:210mm;
+        height:297mm;
+        margin:0;
+        box-shadow:none;
+    }
+
+}
+
+/* ===================== MOBILE ===================== */
+
+@media(max-width:900px){
+
+    body{
+        padding:10px;
+    }
+
+    .resume{
+        width:100%;
+        height:auto;
+        grid-template-columns:1fr;
     }
 
     .left{
         padding:25px;
     }
 
+    .right{
+        padding:25px;
+    }
+
     .profile{
-        width:140px;
-        height:140px;
+        width:130px;
+        height:130px;
     }
 
     .left h1{

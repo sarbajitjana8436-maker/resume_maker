@@ -1,121 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#E8DFDF;
+    background:#d9dee5;
     padding:40px;
     display:flex;
     justify-content:center;
 }
 
+/* ================= A4 Resume ================= */
+
 .resume{
-    width:850px;
-    background:#fff;
-    padding:50px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    width:210mm;
+    min-height:297mm;
+    background:#ede6d6;
+    padding:45px 50px;
+    box-shadow:0 10px 35px rgba(0,0,0,.18);
+    border-top:10px solid #1e3a8a;
 }
 
-/* Header */
+/* ================= Header ================= */
 
 .header{
     text-align:center;
-    margin-bottom:35px;
+    margin-bottom:40px;
 }
 
 .header h1{
-    font-size:38px;
-    letter-spacing:4px;
+    font-size:42px;
+    color:#1f2937;
+    font-weight:700;
+    letter-spacing:2px;
     text-transform:uppercase;
-    color:#222;
 }
 
 .header h3{
-    margin:10px 0;
-    color:#777;
-    font-size:16px;
+    margin:12px 0;
+    color:#2563eb;
+    font-size:18px;
+    font-weight:500;
     letter-spacing:2px;
     text-transform:uppercase;
 }
 
 .header p{
-    margin-top:15px;
-    background:#f3f3f3;
-    padding:10px;
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 20px;
+    background:#f3f7ff;
+    border-radius:8px;
     color:#555;
     font-size:14px;
+    line-height:1.7;
 }
 
-/* Section */
+/* ================= Section ================= */
 
 .section{
-    margin-top:30px;
+    margin-top:35px;
 }
 
 .section h2{
-    text-align:center;
-    font-size:18px;
-    color:#444;
-    letter-spacing:2px;
+    font-size:19px;
+    color:#1e3a8a;
     text-transform:uppercase;
-    border-top:2px solid #cfcfcf;
-    border-bottom:2px solid #cfcfcf;
-    padding:8px;
     margin-bottom:18px;
+    position:relative;
+    padding-bottom:8px;
+    border-bottom:2px solid #dbe4f5;
+}
+
+.section h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    width:80px;
+    height:3px;
+    background:#2563eb;
 }
 
 .section p{
+    font-size:15px;
     color:#555;
     line-height:1.8;
-    font-size:14px;
 }
 
-/* Experience */
+/* ================= Experience ================= */
 
 .item{
-    margin-bottom:25px;
+    background:#fafbfd;
+    border-left:5px solid #2563eb;
+    padding:18px 20px;
+    margin-bottom:18px;
+    border-radius:8px;
 }
 
 .row{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 .row h3{
-    color:#222;
-    font-size:18px;
+    font-size:20px;
+    color:#111827;
 }
 
 .row span{
-    color:#777;
-    font-size:14px;
+    background:#2563eb;
+    color:#fff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:13px;
 }
 
 .item h4{
-    color:#666;
+    color:#2563eb;
+    font-size:16px;
     margin-bottom:10px;
-    font-size:15px;
 }
 
-/* Skills */
+/* ================= Skills ================= */
 
 ul{
-    margin-left:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    list-style:none;
 }
 
 li{
-    margin-bottom:8px;
-    color:#444;
+    background:#eef4ff;
+    border-left:4px solid #2563eb;
+    padding:12px 15px;
+    border-radius:6px;
+    color:#333;
+    font-weight:500;
 }
 
-/* Responsive */
+/* ================= Print ================= */
 
-@media(max-width:768px){
+@page{
+    size:A4;
+    margin:0;
+}
+
+@media print{
+
+    body{
+        background:#fff;
+        padding:0;
+    }
+
+    .resume{
+        width:210mm;
+        min-height:297mm;
+        box-shadow:none;
+        border-top:8px solid #1e3a8a;
+    }
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:900px){
 
     body{
         padding:15px;
@@ -123,16 +179,25 @@ li{
 
     .resume{
         width:100%;
-        padding:25px;
+        padding:30px;
     }
 
     .header h1{
-        font-size:28px;
+        font-size:30px;
+    }
+
+    .header h3{
+        font-size:16px;
     }
 
     .row{
         flex-direction:column;
         align-items:flex-start;
+        gap:10px;
+    }
+
+    ul{
+        grid-template-columns:1fr;
     }
 
 }
