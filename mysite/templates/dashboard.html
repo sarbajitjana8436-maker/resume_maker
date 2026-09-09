@@ -141,59 +141,20 @@
 
                 </tr>
 
+                {% for resume in recent_resumes %}
                 <tr>
-
-                    <td>Software Engineer</td>
-
-                    <td>Professional</td>
-
-                    <td>28 July 2026</td>
-
+                    <td>{{ resume.name }}</td>
+                    <td>Template {{ resume.template }}</td>
+                    <td>{{ resume.created_at|date:"d M Y" }}</td>
                     <td>
-
-                        <button>Edit</button>
-
-                        <button>View</button>
-
+                        <a href="{% url 'view_resume' resume.id %}" class="view-resume-btn">View</a>
                     </td>
-
                 </tr>
-
+                {% empty %}
                 <tr>
-
-                    <td>Web Developer</td>
-
-                    <td>Modern</td>
-
-                    <td>27 July 2026</td>
-
-                    <td>
-
-                        <button>Edit</button>
-
-                        <button>View</button>
-
-                    </td>
-
+                    <td colspan="4">No resumes found.</td>
                 </tr>
-
-                <tr>
-
-                    <td>UI Designer</td>
-
-                    <td>Creative</td>
-
-                    <td>25 July 2026</td>
-
-                    <td>
-
-                        <button>Edit</button>
-
-                        <button>View</button>
-
-                    </td>
-
-                </tr>
+                {% endfor %}
 
             </table>
 

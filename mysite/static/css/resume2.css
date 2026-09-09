@@ -195,6 +195,32 @@ body{
     }
 }
 
+.save-row{
+    width:100%;
+    text-align:center;
+    padding:25px 0 35px;
+    background:#ffffff;
+}
+
+.save-btn{
+    display:inline-block;
+    padding:12px 32px;
+    background:linear-gradient(135deg,#1d4ed8,#2563eb);
+    color:#fff;
+    text-decoration:none;
+    border-radius:999px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+    transition:all .3s ease;
+}
+
+.save-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px rgba(37,99,235,.35);
+    background:linear-gradient(135deg,#1e40af,#1d4ed8);
+}
+
 /* ================= MOBILE ================= */
 
 @media(max-width:900px){

@@ -31,7 +31,8 @@ urlpatterns = [
     path("logout/", views.logout, name= "logout"),
     path("confirm_logout/", views.confirm_logout, name="confirm_logout"),
     path("choose_tem/", views.choose_tem, name="choose_tem"),
-    path("create_resume/", views.create_resume, name= "create_resume")
+    path("create_resume/", views.create_resume, name= "create_resume"),
+    path("view-resume/<int:resume_id>/", views.view_resume, name="view_resume")
 
 
     

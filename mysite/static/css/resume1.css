@@ -177,6 +177,30 @@ body{
     transform:translateX(6px);
 }
 
+.save-row{
+    text-align:center;
+    padding:20px 0 35px;
+}
+
+.save-btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:linear-gradient(135deg,#1f3c88,#2d5ec9);
+    color:#fff;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:0.5px;
+    box-shadow:0 10px 22px rgba(31,60,136,.25);
+    transition:all .3s ease;
+}
+
+.save-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 15px 26px rgba(31,60,136,.35);
+    background:linear-gradient(135deg,#163475,#1d4ed8);
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){

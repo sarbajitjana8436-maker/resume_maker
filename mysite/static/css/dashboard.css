@@ -336,3 +336,18 @@ table{
 }
 
 }
+
+/* View button for saved resumes */
+.view-resume-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#5b3df5;
+    color:white;
+    padding:8px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.view-resume-btn:hover{
+    text-decoration:none;
+}
