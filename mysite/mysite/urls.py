@@ -16,24 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from.import views
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # login pipeline connection
-    # path("", views.login, name= "login"),
-
-    #  dashbord
-    path("", views.fastpage, name= "fastpage"),
-    path("dashboard/", views.dashboard, name= "dashboard"),
-    path("edit/", views.edit, name= "edit"),
-    path("logout/", views.logout, name= "logout"),
+    path("", views.fastpage, name="fastpage"),
+    path("register/", views.register, name="register"),
+    path("profile/", views.profile, name="profile"),
+    path("dashboard/", views.dashboard, name="dashboard"),
+    path("profile/", views.profile, name="profile"),
+    path("edit/", views.edit, name="edit"),
+    path("logout/", views.logout, name="logout"),
     path("confirm_logout/", views.confirm_logout, name="confirm_logout"),
     path("choose_tem/", views.choose_tem, name="choose_tem"),
-    path("create_resume/", views.create_resume, name= "create_resume")
-
-
-    
-
+    path("create_resume/", views.create_resume, name="create_resume"),
+    path("show/", views.show, name="show"),
+    path("view-resume/<int:resume_id>/", views.view_resume, name="view_resume"),
+    path("download-pdf/<int:resume_id>/", views.download_resume_pdf, name="download_resume_pdf"),
 ]

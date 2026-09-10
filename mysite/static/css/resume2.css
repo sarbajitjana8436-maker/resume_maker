@@ -1,223 +1,257 @@
-/* ================= GOOGLE FONT ================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* ================= RESET ================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* ================= BODY ================= */
-
-body{
-    background:#d8dee9;
-    padding:40px;
+body {
+    background: linear-gradient(135deg, #dfe8fb 0%, #edf3ff 100%);
+    padding: 40px;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-/* ================= RESUME (A4) ================= */
-
-.resume{
-    width:210mm;
-    min-height:297mm;
-    margin:auto;
-    display:flex;
-    background:#ffffff;
-    overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.18);
+.resume {
+    width: 210mm;
+    min-height: 297mm;
+    margin: auto;
+    display: flex;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(15, 23, 42, 0.05);
 }
 
-/* ================= LEFT SIDEBAR ================= */
-
-.left{
-    width:34%;
-    background:linear-gradient(180deg,#0f172a,#1e3a8a);
-    color:#ffffff;
-    padding:40px 30px;
+.left {
+    width: 34%;
+    background: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 38px 28px;
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.08);
 }
 
-.left h1{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:8px;
-    font-weight:700;
+.left h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
-.left > h3{
-    font-size:17px;
-    font-weight:400;
-    color:#cbd5e1;
-    margin-bottom:35px;
-    letter-spacing:1px;
+.left > h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #d9eaff;
+    margin-bottom: 30px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.left .section{
-    margin-bottom:32px;
+.left .section {
+    margin-bottom: 26px;
 }
 
-.left .section h2{
-    font-size:15px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:15px;
-    padding-bottom:8px;
-    border-bottom:2px solid rgba(255,255,255,.25);
+.left .section h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+    color: #edf4ff;
 }
 
 .left .section p,
-.left .section span{
-    color:#dbeafe;
-    font-size:14px;
-    line-height:1.8;
+.left .section span {
+    color: #dbeafe;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.left h4{
-    font-size:16px;
-    margin-bottom:5px;
+.left h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #f5f9ff;
 }
 
-.left ul{
-    list-style:none;
+.left ul {
+    list-style: none;
 }
 
-.left li{
-    background:rgba(255,255,255,.10);
-    border-left:4px solid #60a5fa;
-    margin-bottom:12px;
-    padding:10px 15px;
-    border-radius:8px;
-    transition:.3s;
+.left li {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #60a5fa;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: 0.25s ease;
+    color: #edf4ff;
 }
 
-.left li:hover{
-    background:rgba(255,255,255,.18);
-    transform:translateX(5px);
+.left li:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(4px);
 }
 
-/* ================= RIGHT SIDE ================= */
-
-.right{
-    width:66%;
-    padding:40px;
-    background:#ffffff;
+.right {
+    width: 66%;
+    padding: 40px 34px;
+    background: #ffffff;
 }
 
-.right .section{
-    margin-bottom:35px;
+.right .section {
+    margin-bottom: 30px;
 }
 
-.right .section h2{
-    color:#1e3a8a;
-    font-size:21px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:20px;
-    padding-left:16px;
-    position:relative;
+.right .section h2 {
+    color: #1e3a8a;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    position: relative;
+    font-weight: 700;
 }
 
-.right .section h2::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:1px;
-    width:5px;
-    height:28px;
-    border-radius:20px;
-    background:#2563eb;
+.right .section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 6px;
+    height: 28px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #2563eb, #60a5fa);
 }
 
-.box{
-    background:#f8fafc;
-    border-left:5px solid #2563eb;
-    padding:22px;
-    border-radius:10px;
-    margin-bottom:20px;
-    transition:.3s;
+.box {
+    background: linear-gradient(180deg, #f8fbff 0%, #f3f7ff 100%);
+    border-left: 5px solid #2563eb;
+    padding: 20px 22px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    box-shadow: 0 10px 22px rgba(37, 99, 235, 0.04);
 }
 
-.box:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 20px rgba(0,0,0,.10);
+.box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.box h3{
-    font-size:22px;
-    color:#111827;
-    margin-bottom:5px;
+.box h3 {
+    font-size: 22px;
+    color: #111827;
+    margin-bottom: 6px;
+    font-weight: 700;
 }
 
-.box span{
-    display:inline-block;
-    background:#2563eb;
-    color:#fff;
-    padding:5px 14px;
-    border-radius:20px;
-    font-size:13px;
-    margin:8px 0 12px;
+.box span {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #4f8aff);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    margin: 8px 0 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
 }
 
-.box h4{
-    color:#2563eb;
-    font-size:17px;
-    margin-bottom:10px;
+.box h4 {
+    color: #2563eb;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.box p{
-    color:#555;
-    line-height:1.8;
-    font-size:15px;
+.box p {
+    color: #4d5868;
+    line-height: 1.8;
+    font-size: 15px;
 }
 
-/* ================= PRINT ================= */
-
-@page{
-    size:A4 portrait;
-    margin:0;
+@page {
+    size: A4 portrait;
+    margin: 0;
 }
 
-@media print{
-
-    body{
-        background:#fff;
-        padding:0;
-        margin:0;
+@media print {
+    body {
+        background: #fff;
+        padding: 0;
+        margin: 0;
     }
 
-    .resume{
-        width:210mm;
-        min-height:297mm;
-        margin:0;
-        box-shadow:none;
+    .resume {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
     }
 }
 
-/* ================= MOBILE ================= */
+.save-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 26px 20px 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(240,245,255,0.95));
+    border-top: 1px solid rgba(37, 99, 235, 0.08);
+}
 
-@media(max-width:900px){
+.save-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.2);
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.18);
+}
 
-    body{
-        padding:15px;
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(37, 99, 235, 0.28);
+    background: linear-gradient(135deg, #1e40af, #1d4ed8);
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 15px;
     }
 
-    .resume{
-        width:100%;
-        flex-direction:column;
+    .resume {
+        width: 100%;
+        flex-direction: column;
     }
 
     .left,
-    .right{
-        width:100%;
+    .right {
+        width: 100%;
     }
 
-    .left{
-        padding:30px 25px;
+    .left {
+        padding: 30px 24px;
     }
 
-    .right{
-        padding:30px 25px;
+    .right {
+        padding: 30px 24px;
     }
 }

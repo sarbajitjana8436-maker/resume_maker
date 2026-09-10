@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#eef2ff;
+    background:#F6F1EC;
 }
 
 .logout-modal{
@@ -16,6 +16,7 @@ body{
     justify-content:center;
     align-items:center;
     padding:20px;
+    background:#F6F1EC;
 }
 
 .logout-card{

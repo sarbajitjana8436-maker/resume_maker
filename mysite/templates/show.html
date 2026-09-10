@@ -1,0 +1,83 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>My Resumes</title>
+
+    <link rel="stylesheet" href="{% static 'css/show.css' %}" />
+  </head>
+
+  <body>
+    <div class="profile-page">
+      <div class="profile-shell">
+        <div class="profile-header">
+          <div class="brand">
+            <div class="brand-mark">R</div>
+            <span>ResumeMaker</span>
+          </div>
+
+          <div class="header-actions">
+            <a href="{% url 'profile' %}" class="header-btn"> Profile </a>
+
+            <a href="{% url 'logout' %}" class="header-btn"> Logout </a>
+          </div>
+        </div>
+
+        <div class="profile-body">
+          <main class="content-panel">
+            <h2 class="section-title">My Resumes</h2>
+
+            {% if resumes %} {% for resume in resumes %}
+
+            <div class="panel-card">
+              <h3 class="section-title">Resume {{ forloop.counter }}</h3>
+
+              <p>
+                <strong>Name:</strong>
+                {{ resume.name }}
+              </p>
+
+              <p>
+                <strong>Email:</strong>
+                {{ resume.email }}
+              </p>
+
+              <p>
+                <strong>Created:</strong>
+                {{ resume.created_at|date:"d M Y" }}
+              </p>
+
+              <div class="header-actions">
+                <a href="{% url 'view_resume' resume.id %}" class="header-btn">
+                  View
+                </a>
+
+                <a
+                  href="{% url 'download_resume_pdf' resume.id %}"
+                  class="header-btn"
+                  target="_blank"
+                >
+                  Download PDF
+                </a>
+              </div>
+            </div>
+
+            {% endfor %} {% else %}
+
+            <div class="panel-card">
+              <h3 class="section-title">No Resume Found</h3>
+
+              <p>You have not created any resume yet.</p>
+            </div>
+
+            {% endif %}
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

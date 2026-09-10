@@ -1,44 +1,77 @@
 {% load static %}
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ResumeMaker</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ResumeMaker</title>
+    <link rel="stylesheet" href="{% static 'css/fastpage.css' %}" />
+  </head>
+  <body>
+    <div class="auth-page">
+      <div class="auth-shell">
+        <div class="brand-panel">
+          <div class="brand-row">
+            <div class="brand-mark">R</div>
+            <span>ResumeMaker</span>
+          </div>
+          <h2>Build a resume that opens doors.</h2>
+          <p>
+            Craft polished, recruiter-ready resumes in minutes with a simple,
+            confidence-boosting workflow.
+          </p>
 
-    <link rel="stylesheet" href="{% static 'css/fastpage.css' %}">
+          <ul class="feature-list">
+            <li>Professional templates</li>
+            <li>Fast editing experience</li>
+            <li>Smart, clean formatting</li>
+          </ul>
+        </div>
 
-    <!-- Icons -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
+        <div class="auth-card">
+          <div class="card-top">
+            <span class="eyebrow">Welcome back</span>
+            <h1>Login</h1>
+          </div>
+          <p class="muted">Sign in to continue building your resume.</p>
 
-<div class="login-box">
+          {% if error %}
+          <div class="error">{{ error }}</div>
+          {% endif %}
 
-    <div class="profile">
-        <i class="fa-regular fa-user"></i>
+          <form method="post" class="auth-form">
+            {% csrf_token %}
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input
+                id="username"
+                type="text"
+                name="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <button type="submit">Login</button>
+          </form>
+
+          <p class="bottom-text">
+            Don't have an account?
+            <a href="{% url 'register' %}">Create one</a>
+          </p>
+        </div>
+      </div>
     </div>
-
-    <form method="post">
-        {% csrf_token %}
-
-        <div class="input-box">
-            <i class="fa-regular fa-user"></i>
-            <input type="text" name="name" placeholder="Name" required>
-        </div>
-
-        <div class="input-box">
-            <i class="fa-solid fa-calendar-days"></i>
-            <input type="date" name="dob" required>
-        </div>
-
-        <button type="submit">Submit</button>
-
-    </form>
-
-</div>
-
-</body>
+  </body>
 </html>

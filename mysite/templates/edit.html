@@ -1,179 +1,230 @@
 {% load static %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ResumeMaker</title>
 
-    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
 
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <aside class="sidebar">
-
+      <aside class="sidebar">
         <div class="logo">
-            <i class="fa-solid fa-file-lines"></i>
-            <h2>Resume Maker</h2>
+          <i class="fa-solid fa-file-lines"></i>
+          <h2>Resume Maker</h2>
         </div>
 
         <ul>
+          <li class="nav-item active" data-target="personal">
+            <i class="fa-solid fa-user"></i>
+            Personal Info
+          </li>
 
-            <li class="active">
-                <i class="fa-solid fa-user"></i>
-                Personal Info
-            </li>
+          <li class="nav-item" data-target="experience">
+            <i class="fa-solid fa-briefcase"></i>
+            Experience
+          </li>
 
-            <li>
-                <i class="fa-solid fa-briefcase"></i>
-                Experience
-            </li>
+          <li class="nav-item" data-target="education">
+            <i class="fa-solid fa-graduation-cap"></i>
+            Education
+          </li>
 
-            <li>
-                <i class="fa-solid fa-graduation-cap"></i>
-                Education
-            </li>
+          <li class="nav-item" data-target="skills">
+            <i class="fa-solid fa-lightbulb"></i>
+            Skills
+          </li>
 
-            <li>
-                <i class="fa-solid fa-lightbulb"></i>
-                Skills
-            </li>
-
-            <li>
-                <i class="fa-solid fa-diagram-project"></i>
-                Projects
-            </li>
-
+          <li class="nav-item" data-target="projects">
+            <i class="fa-solid fa-diagram-project"></i>
+            Projects
+          </li>
         </ul>
+      </aside>
 
-    </aside>
+      <!-- Main -->
 
-    <!-- Main -->
-
-    <main class="main">
-
+      <main class="main">
         <div class="topbar">
-
-            <h1>Create Resume</h1>
-
+          <h1>Create Resume</h1>
         </div>
 
         <form method="post" action="{% url 'create_resume' %}">
+          {% csrf_token %}
+          <input type="hidden" name="template" value="{{ template }}" />
 
-            {% csrf_token %}
-            <input type="hidden" name="template" value="{{ template }}">
+          <div class="grid">
+            <!-- Personal -->
 
-            <div class="grid">
+            <div class="card section-card active" id="personal">
+              <h2>Personal Information</h2>
 
-                <!-- Personal -->
+              <input type="text" name="name" placeholder="Full Name" />
 
-                <div class="card">
+              <input type="email" name="email" placeholder="Email" />
 
-                    <h2>Personal Information</h2>
+              <input type="text" name="phone" placeholder="Phone" />
 
-                    <input type="text" name="name" placeholder="Full Name">
+              <input type="text" name="address" placeholder="Address" />
 
-                    <input type="email" name="email" placeholder="Email">
-
-                    <input type="text" name="phone" placeholder="Phone">
-
-                    <input type="text" name="address" placeholder="Address">
-
-                    <textarea
-                    rows="5"
-                    placeholder="Professional Summary" name="professional_summary"></textarea>
-
-                </div>
-
-                <!-- Experience -->
-
-                <div class="card">
-
-                    <h2>Work Experience</h2>
-
-                    <input type="text" name="company" placeholder="Company">
-
-                    <input type="text" name="job_title" placeholder="Job Title">
-
-                    <input type="text" name="duration" placeholder="Duration">
-
-                    <textarea
-                    rows="5"
-                    placeholder="Describe your experience" name="experience_describtion"></textarea>
-
-                </div>
-
-                <!-- Education -->
-
-                <div class="card">
-
-                    <h2>Education</h2>
-
-                    <input type="text" name="college" placeholder="College">
-
-                    <input type="text" name="degree" placeholder="Degree">
-
-                    <input type="text" name="passing_year" placeholder="Passing Year">
-
-                </div>
-
-                <!-- Skills -->
-
-                <div class="card">
-
-                    <h2>Skills</h2>
-
-                    <input type="text" name="skill1" placeholder="Skill 1">
-
-                    <input type="text" name="skill2" placeholder="Skill 2">
-
-                    <input type="text" name="skill3" placeholder="Skill 3">
-
-                    <input type="text" name="skill4" placeholder="Skill 4">
-
-                </div>
-
-                <!-- Projects -->
-
-                <div class="card">
-
-                    <h2>Projects</h2>
-
-                    <input type="text" name="project_name" placeholder="Project Name">
-
-                    <textarea
-                    rows="5"
-                    placeholder="Project Description" name="project_description"></textarea>
-
-                </div>
-
-                <!-- Share -->
-
-                <div class="card">
-
-                    <h2>Download Resume</h2>
-
-                    <button type="submit">
-                        Generate Resume
-                    </button>
-
-                </div>
-
+              <textarea
+                rows="5"
+                placeholder="Professional Summary"
+                name="professional_summary"
+              ></textarea>
             </div>
 
+            <!-- Experience -->
+
+            <div class="card section-card" id="experience">
+              <h2>Work Experience</h2>
+
+              <input type="text" name="company" placeholder="Company" />
+
+              <input type="text" name="job_title" placeholder="Job Title" />
+
+              <input type="text" name="duration" placeholder="Duration" />
+
+              <textarea
+                rows="5"
+                placeholder="Describe your experience"
+                name="experience_describtion"
+              ></textarea>
+            </div>
+
+            <!-- Education -->
+
+            <div class="card section-card" id="education">
+              <h2>Education</h2>
+
+              <input type="text" name="college" placeholder="College" />
+
+              <input type="text" name="degree" placeholder="Degree" />
+
+              <input
+                type="text"
+                name="passing_year"
+                placeholder="Passing Year"
+              />
+            </div>
+
+            <!-- Skills -->
+
+            <div class="card section-card" id="skills">
+              <h2>Skills</h2>
+
+              <input type="text" name="skill1" placeholder="Skill 1" />
+
+              <input type="text" name="skill2" placeholder="Skill 2" />
+
+              <input type="text" name="skill3" placeholder="Skill 3" />
+
+              <input type="text" name="skill4" placeholder="Skill 4" />
+            </div>
+
+            <!-- Projects -->
+
+            <div class="card section-card" id="projects">
+              <h2>Projects</h2>
+
+              <input
+                type="text"
+                name="project_name"
+                placeholder="Project Name"
+              />
+
+              <textarea
+                rows="5"
+                placeholder="Project Description"
+                name="project_description"
+              ></textarea>
+            </div>
+
+            <!-- Share -->
+
+            <div class="card">
+              <h2>Download Resume</h2>
+
+              <button type="submit">Generate Resume</button>
+            </div>
+          </div>
         </form>
+      </main>
+    </div>
 
-    </main>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>ResumeMaker</span>
+        </div>
+        <p>Your professional resume, made simple.</p>
+      </div>
+      <div class="footer-copy">Developed with Django | © 2026 ResumeMaker</div>
+    </footer>
 
-</div>
+    <script>
+      const navItems = document.querySelectorAll(".nav-item");
+      const sectionCards = document.querySelectorAll(".section-card");
 
-</body>
+      function setActiveSection(targetId) {
+        navItems.forEach((item) => {
+          const active = item.dataset.target === targetId;
+          item.classList.toggle("active", active);
+          item.setAttribute("aria-pressed", String(active));
+        });
+
+        sectionCards.forEach((card) => {
+          const active = card.id === targetId;
+          card.classList.toggle("active", active);
+          card.classList.toggle("is-selected", active);
+
+          if (active) {
+            card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            card.setAttribute("tabindex", "-1");
+            card.focus({ preventScroll: true });
+          }
+        });
+      }
+
+      navItems.forEach((item) => {
+        item.setAttribute("tabindex", "0");
+        item.setAttribute("role", "button");
+        item.setAttribute(
+          "aria-pressed",
+          String(item.classList.contains("active")),
+        );
+
+        item.addEventListener("click", function () {
+          setActiveSection(this.dataset.target);
+        });
+
+        item.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            setActiveSection(this.dataset.target);
+          }
+        });
+      });
+
+      sectionCards.forEach((card) => {
+        card.setAttribute("tabindex", "-1");
+      });
+
+      const firstTarget =
+        document.querySelector(".nav-item.active")?.dataset.target ||
+        "personal";
+      setActiveSection(firstTarget);
+    </script>
+  </body>
 </html>

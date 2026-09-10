@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #F6F1EC;
+    color: #2B1B14;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3A2115 0%, #70472C 50%, #9A6845 100%);
+    padding: 26px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-shell {
+    width: min(1100px, 100%);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #E1D4CA;
+    box-shadow: 0 24px 60px rgba(58, 33, 21, 0.25);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.profile-header {
+    background: linear-gradient(90deg, #3A2115 0%, #70472C 100%);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #70472C;
+    border: 1px solid #B98A68;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.profile-header .header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.profile-header .header-btn:hover {
+    background: #8B5E3C;
+}
+
+.profile-body {
+    background: #F6F1EC;
+    padding: 26px 20px;
+}
+
+.content-panel {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.section-title {
+    color: #3A2115;
+    margin-bottom: 10px;
+}
+
+.panel-card {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E1D4CA;
+    box-shadow: 0 10px 22px rgba(58, 33, 21, 0.08);
+    border-radius: 14px;
+    padding: 20px 22px;
+}
+
+.panel-card:hover {
+    box-shadow: 0 16px 28px rgba(58, 33, 21, 0.14);
+}
+
+.panel-card .section-title {
+    color: #3A2115;
+}
+
+.panel-card p {
+    color: #75675E;
+    margin: 10px 0;
+}
+
+.panel-card p strong {
+    color: #3A2115;
+}
+
+.panel-card .header-btn {
+    background: linear-gradient(135deg, #8B5E3C 0%, #70472C 100%);
+    color: #FFFFFF;
+    box-shadow: 0 10px 20px rgba(112, 71, 44, 0.22);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.panel-card .header-btn:hover {
+    background: linear-gradient(135deg, #70472C 0%, #542F1C 100%);
+}
