@@ -35,7 +35,7 @@
 
           <h4>{{ job_title }}</h4>
 
-          <p>{{ experience }}</p>
+          <p>{{ experience_describtion }}</p>
         </div>
       </div>
 
@@ -72,10 +72,16 @@
           <li>{{ skill4 }}</li>
         </ul>
       </div>
+    </div>
 
-      <div class="save-row">
-        <a href="/dashboard" class="save-btn">Save</a>
-      </div>
+    <div class="save-row">
+      <a href="{% url 'dashboard' %}" class="save-btn">Back to Dashboard</a>
+      <a
+        href="{% url 'download_resume_pdf' resume.id %}"
+        class="save-btn"
+        download
+        >Download PDF</a
+      >
     </div>
   </body>
 </html>
